@@ -1,6 +1,6 @@
 
 <package>
-  <name>simulatorwrapper</name>
+  <name>simulator_wrapper</name>
   <version>0.1.0</version>
   <description>
   A ROS wrapper that maps wheel commands to actions and observations to camera images on a ROS topic.
