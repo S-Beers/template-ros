@@ -7,7 +7,6 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      #- ./data:/data
       - /home/sbeers/Documents/ROS-wrapper-development/template-ros/simulator_help_files/data:/data
       # avahi socket
       - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket
@@ -22,7 +21,7 @@ services:
     privileged: true
     command: dt-launcher-default
     volumes:
-      - ./data:/data
+      - /home/sbeers/Documents/ROS-wrapper-development/template-ros/simulator_help_files/data:/data
       # avahi socket
       - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket
     environment:
@@ -34,7 +33,7 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./data:/data
+      - /home/sbeers/Documents/ROS-wrapper-development/template-ros/simulator_help_files/data:/data
       # avahi socket
       - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket
     environment:

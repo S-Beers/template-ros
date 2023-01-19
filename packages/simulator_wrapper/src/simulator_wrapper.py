@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import rospy
 from duckietown.dtros import DTROS, NodeType
@@ -7,8 +8,12 @@ import gym_duckietown
 from gym_duckietown.simulator import Simulator
 import cv2
 from cv_bridge import CvBridge
-VEHICLE_NAME = os.environ['VEHICLE_NAME']
+import os   #TODO: for debuggging, remove later
 
+
+
+VEHICLE_NAME = os.environ['VEHICLE_NAME']
+os.environ['PYGLET_DEBUG_GL'] = "True"
 
 class ROSWrapper(DTROS):
     '''
@@ -38,13 +43,14 @@ class ROSWrapper(DTROS):
             queue_size=1
         )
 
+
         # Initialize the simulator
         self.env = Simulator(
             seed=123,  # random seed
-            map_name="loop_empty",
+            map_name='/code/catkin_ws/src/<template-ros>/packages/simulator_wrapper/src/costum_map',
             max_steps=500001,  # we don't want the gym to reset itself
             domain_rand=0,
-            camera_width=640,
+            camera_width=480,
             camera_height=480,
             accept_start_angle_deg=4,  # start close to straight
             full_transparency=True,
@@ -86,7 +92,7 @@ class ROSWrapper(DTROS):
             self.env.render()
 
             # Set again action to stop, in case no more messages are being received
-            self.action = [0.0, 0.0]
+  #          self.action = [0.0, 0.0]
 
             if done:
                 # Reset the simulator when the robot goes out of the road.
