@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import rospy
 from duckietown.dtros import DTROS, NodeType
@@ -86,7 +87,7 @@ class ROSWrapper(DTROS):
             self.env.render()
 
             # Set again action to stop, in case no more messages are being received
-            self.action = [0.0, 0.0]
+            #self.action = [0.0, 0.0]
 
             if done:
                 # Reset the simulator when the robot goes out of the road.

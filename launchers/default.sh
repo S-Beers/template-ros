@@ -19,8 +19,8 @@ dt-launchfile-init
 
 # launching app
 #dt-exec echo "This is an empty launch script. Update it to launch your application."
-dt-exec Xvfb :1 -screen 0 1024x768x24 -ac +extension GLX +render -noreset
-export DISPLAY=:1
+dt-exec Xvfb :33 -screen 0 1024x768x24 -ac +extension GLX +render -noreset
+export DISPLAY=:33
 dt-exec rosrun simulator_wrapper simulator_wrapper.py
 
 # ----------------------------------------------------------------------------

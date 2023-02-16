@@ -1,2 +1,4 @@
 # LIST YOUR PYTHON3 PACKAGES HERE
 duckietown-gym-daffy
+numpy==1.20
+pyglet==1.5.15

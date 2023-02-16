@@ -87,3 +87,4 @@ LABEL org.duckietown.label.module.type="${REPO_NAME}" \
 # <== Do not change the code above this line
 # <==================================================
 ENV VEHICLE_NAME fakebot
+ENV PYGLET_DEBUG_GL True
